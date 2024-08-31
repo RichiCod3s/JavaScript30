@@ -27,16 +27,34 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+        const overNineteen = people.some((x) => 2024 - x.year >= 19);
+        console.log(overNineteen);
+
     // Array.prototype.every() // is everyone 19 or older?
+    const everyoneNineteen = people.every((x) => 2024 - x.year >= 19);
+    console.log(everyoneNineteen);
+
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
+      const comment = comments.find(comment => comment.id === 823423);
+      console.log(comment);
+
+
     // Array.prototype.findIndex()
     // Find the comment with this ID
+    const index = comments.findIndex(c => c.id == 823423);
+    console.log(index);
+    
     // delete the comment with the ID of 823423
+    
+    // delete will leave an id gap 0,2,4 whereas Splice will shift the elements 0,1,2,3
+    comments.splice(index,1);
+    //delete comments[1];
 
+    console.table(comments);
   </script>
 </body>
 </html>
